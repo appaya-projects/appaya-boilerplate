@@ -1,0 +1,61 @@
+
+// Grid
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+) !default;
+
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+) !default;
+
+$grid-gutter: 30px !default;
+$columns-count: 12;
+
+
+// Em/Rem
+$browser-context: 16px;
+
+// Colors
+$primary-color: black;
+$secondary-color: #FE5B60;
+$background-color: white;
+
+
+// Typography
+$font-family: 'Open Sans', sans-serif;
+$heading-font-family: 'Montserrat', sans-serif;
+
+$heading-color: black;
+$text-color: black;
+$link-color: black; 
+$link-color-hover: black;
+
+$base-size: 1rem;
+$sizes: (
+  1: 2.50,
+  2: 2.00,
+  3: 1.50,
+  4: 1.00,
+  5: .75,
+  6: .50,
+);
+
+$base-spacer: 1em;
+$spacers: (
+  1: 1.75,
+  2: 1.50,
+  3: 1.25,
+  4: 1.00,
+  5: .75,
+  6: .50,
+);
+
+$base-line-height: 1.5;
+

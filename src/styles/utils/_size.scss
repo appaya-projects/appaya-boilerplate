@@ -1,0 +1,5 @@
+@each $s, $s-width in $sizes {
+	.u-size-#{$s} {
+		font-size: $base-size*$s-width;
+	}
+}

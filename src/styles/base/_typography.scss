@@ -1,0 +1,27 @@
+body {
+	color: $text-color;
+	font-family: $font-family;
+	font-size: $base-size;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@if($heading-font-family != $font-family) {
+		font-family: $heading-font-family;
+	}
+	color: $heading-color;
+	margin: $base-spacer 0;
+	line-height: $base-line-height;
+}
+
+p {
+	margin: $base-spacer 0;
+	line-height: $base-line-height;
+}
+
+a {
+	color: $link-color;
+	&:hover {
+		color: $link-color-hover;
+
+	}
+}

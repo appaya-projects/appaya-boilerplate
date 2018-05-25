@@ -1,0 +1,5 @@
+@each $s, $s-width in $spacers {
+	.u-spacer-#{$s} {
+		margin: $base-spacer*$s-width 0;
+	}
+}
