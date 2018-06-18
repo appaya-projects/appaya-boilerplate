@@ -6,6 +6,6 @@ import { InputError } from "@appaya/behavior/list/form-validate/classes/input-er
 
 export class MyFormValidateBehavior extends FormValidateBehavior {
 	createInputError(input: HTMLInputElement) {
-		this.inputErrors.push(new InputError(input));
+		this.inputErrors.push(new InputError(input, document.querySelector('form'), 'afterbegin'));
 	}
 }
