@@ -4,7 +4,10 @@ const path = require('path'),
 	autoprefixer = require('autoprefixer');
 
 module.exports = {
-	entry: './src/main.ts',
+	entry: './src/page.js',
+	resolve: {
+        extensions: [ '.ts', '.tsx', ".js", ".json"]
+    },
 	module: {
 		rules: [
 			{ test: /\.ts?$/, use: "awesome-typescript-loader" },

@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>appaya - Boilerplate</title>
+  <title>appaya - LP boilerplate</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--[if lt IE 9]>
@@ -25,7 +25,7 @@
           </div>
         </div>
         <div class="grid__item sm-8">
-          <p class="u-text-right">appaya boilerplate v1.0.0</p>
+          <p class="u-text-right">appaya LP boilerplate v1.0.0</p>
         </div>
       </div>
     </div>
@@ -34,11 +34,28 @@
   <header>
     <div class="container">
       <div class="o-heading-block">
-        <h1 class="u-size-1">appaya boilerplate</h1>
+        <h1 class="u-size-1">appaya LP boilerplate</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem et voluptatem pariatur, nobis magnam aut accusamus
           optio impedit assumenda molestiae provident voluptas eligendi a ipsum eos. Illo non minus voluptatem deserunt nisi
           porro quia? Laboriosam.</p>
       </div>
     </div>
   </header>
+  <section>
+    <div class="container">
+      <form appaya-behavior="form-validate;form-ajax" class="c-form" action="https://jsonplaceholder.typicode.com/posts" form-ajax-messagesuccess="Dziękujemy, odezwiemy się w ciągu kilku godzin!"
+        form-ajax-messagefailure="Przpraszamy, wystąpił błąd!" novalidate>
+
+        <div class="c-form__group">
+          <label for="name">Your name</label>
+          <input type="text" name="name" id="name" required>
+        </div>
+        <div class="c-form__group">
+          <label for="name">Your email</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+        <input type="submit" class="c-form__submit o-btn" value="Send">
+      </form>
+    </div>
+  </section>
 </body>

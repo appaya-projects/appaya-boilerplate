@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@appaya/behavior": "^0.1.2",
     "awesome-typescript-loader": "^5.0.0",
     "css-loader": "^0.28.11",
     "es6-promise": "^4.2.4",
