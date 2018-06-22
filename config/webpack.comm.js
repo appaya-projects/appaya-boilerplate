@@ -1,13 +1,10 @@
-const path = require('path'),
-	MiniCssExtractPlugin = require("mini-css-extract-plugin"),
-	HtmlWebpackPlugin = require('html-webpack-plugin'),
-	autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: './src/page.js',
 	resolve: {
-        extensions: [ '.ts', '.tsx', ".js", ".json"]
-    },
+		extensions: ['.ts', '.tsx', ".js", ".json"]
+	},
 	module: {
 		rules: [
 			{ test: /\.ts?$/, use: "awesome-typescript-loader" },
@@ -16,21 +13,20 @@ module.exports = {
 				loader: 'file-loader?name=assets/[name].[ext]'
 			},
 			{
+				test: /\.html$/,
+				loader: 'html-loader'
+			},
+			{
 				test: /\.css$/, use: [
-					MiniCssExtractPlugin.loader,
-					{ loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
-					{ loader: 'postcss-loader', options: { sourceMap: true, plugins: (loader) => [autoprefixer()] } }]
+					{ loader: 'style-loader' },
+					{ loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } }
+				]
 			},
 			{
 				test: /\.scss$/, use: [
-					MiniCssExtractPlugin.loader,
+					{ loader: 'style-loader' },
 					{ loader: 'css-loader', options: { sourceMap: true, importLoaders: 1, minimize: true } },
-					{ loader: 'postcss-loader', options: { sourceMap: true, plugins: (loader) => [autoprefixer()] } },
 					{ loader: 'sass-loader', options: { sourceMap: true, importLoaders: 1 } }]
-			},
-			{
-				test: /\.html$/,
-				loader: 'html-loader'
 			},
 			{ enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
 		]
@@ -38,10 +34,6 @@ module.exports = {
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: 'src/index.html'
-		}),
-
-		new MiniCssExtractPlugin({
-			filename: "[name].css"
-		})
+		})		
 	]
 };

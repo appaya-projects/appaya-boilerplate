@@ -1,8 +1,8 @@
-const webpack = require('webpack'),
-	webpackMerge = require('webpack-merge'),
-	commonConfig = require('./webpack.comm.js'),
-	path = require('path')
-	ImageminPlugin = require('imagemin-webpack-plugin').default;
+const webpackMerge = require('webpack-merge'),
+  commonConfig = require('./webpack.comm.js'),
+  path = require('path'),
+  MiniCssExtractPlugin = require("mini-css-extract-plugin"),
+  autoprefixer = require('autoprefixer');
 
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 
@@ -18,20 +18,36 @@ module.exports = webpackMerge(commonConfig, {
   },
 
   optimization: {
-	  minimize: true
+    minimize: true
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader?name=assets/[name].[ext]',
+           'image-webpack-loader'
+        ]
+      },
+      {
+        test: /\.css$/, use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1 } },
+          { loader: 'postcss-loader', options: { sourceMap: true, plugins: (loader) => [autoprefixer()] } }]
+      },
+      {
+        test: /\.scss$/, use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1, minimize: true } },
+          { loader: 'postcss-loader', options: { sourceMap: true, plugins: (loader) => [autoprefixer()] } },
+          { loader: 'sass-loader', options: { sourceMap: true, importLoaders: 1 } }]
+      },
+    ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        'ENV': JSON.stringify(ENV)
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      htmlLoader: {
-        minimize: false
-      }
-	}),
-	new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
+    new MiniCssExtractPlugin({
+			filename: "[name].css"
+		})
   ]
 });
 
