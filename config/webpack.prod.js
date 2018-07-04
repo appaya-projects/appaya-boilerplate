@@ -23,12 +23,16 @@ module.exports = webpackMerge(commonConfig, {
   module: {
     rules: [
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g)$/i,
         use: [
           'file-loader?name=assets/[name].[ext]',
            'image-webpack-loader'
         ]
       },
+      {
+				test: /\.(svg|woff|woff2|ttf|eot|ico)$/,
+				loader: 'file-loader?name=assets/[name].[ext]'
+			},
       {
         test: /\.css$/, use: [
           MiniCssExtractPlugin.loader,
