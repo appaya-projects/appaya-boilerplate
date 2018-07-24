@@ -9,3 +9,7 @@
 @function size($size) {
 	@return $base-size * map-get($sizes, $size);
 }
+
+@function spacer($spacer) {
+	@return $base-spacer * map-get($spacers, $spacer);
+}
