@@ -1,58 +1,52 @@
 .grid {
-	display: flex;
-	flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 
-	margin-right: $grid-gutter/-2;
-	margin-left: $grid-gutter/-2;
+    margin-right: $grid-gutter / -2;
+    margin-left: $grid-gutter / -2;
 
-	&--no-gutters {
-		margin-right: 0;
-		margin-left: 0;
+    &--no-gutters {
+        margin-right: 0;
+        margin-left: 0;
 
-		& > .grid__item {
-			padding-right: 0;
-			padding-left: 0;
-		}
-	}
+        & > .grid__item {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
 }
 
 .grid__item {
-	width: 100%;
-	min-height: 1px;
-	padding-right: ($grid-gutter / 2);
-	padding-left: ($grid-gutter / 2);
+    width: 100%;
+    min-height: 1px;
+    padding-right: ($grid-gutter / 2);
+    padding-left: ($grid-gutter / 2);
 }
 
 @each $b, $b-width in $grid-breakpoints {
-	// $b: if(map-get($grid-breakpoints, $_b) == 0, "", "-#{$_b}");
-	@media (min-width: $b-width) {
-		.#{$b} {
-			flex-basis: 0;
-			flex-grow: 1;
-			max-width: 100%;
-		}
+    // $b: if(map-get($grid-breakpoints, $_b) == 0, "", "-#{$_b}");
+    @media (min-width: $b-width) {
+        .#{$b} {
+            flex-basis: 0;
+            flex-grow: 1;
+            max-width: 100%;
+        }
 
-		@for $i from 1 through $columns-count {
-			.#{$b}-#{$i} {
-			  flex: 0 0 percentage($i/$columns-count);
-			  max-width: percentage($i/$columns-count);
-			}
-			.order-#{$b}-#{$i} {
-				order: $i;
-			}
-		}
+        @for $i from 1 through $columns-count {
+            .#{$b}-#{$i} {
+                flex: 0 0 percentage($i/$columns-count);
+                max-width: percentage($i/$columns-count);
+            }
 
-		@for $i from 1 through ($columns-count - 1) {
-			.offset-#{$b}-#{$i} {
-				margin-left: percentage($i/$columns-count);
-			}
-		}
-	}
+            .order-#{$b}-#{$i} {
+                order: $i;
+            }
+        }
+
+        @for $i from 1 through ($columns-count - 1) {
+            .offset-#{$b}-#{$i} {
+                margin-left: percentage($i/$columns-count);
+            }
+        }
+    }
 }
-
-
-/*
-<div class="c-grid">
-	<div class="c-grid__item c-grid__item--md-6"></div>
-</div>
-*/

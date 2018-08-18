@@ -1,0 +1,21 @@
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+}
+
+@function rem($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}rem;
+}
+
+@function spacer($spacer) {
+    @return $base-spacer * map-get($spacers, $spacer);
+}
+
+@function color($id) {
+    $color-var: map-get($colors, $id);
+
+    @if not $color-var {
+        @error 'undefined color name: ' + $id;
+    }
+
+    @return $color-var;
+}

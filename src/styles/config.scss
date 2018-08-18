@@ -1,0 +1,31 @@
+$colors: (
+    primary: #111,
+    secondary: #f48566,
+    error: #f00,
+    background: #fff,
+
+    heading: #111,
+    text: #111,
+    link: #111,
+    link-hover: #111
+);
+
+// Typography
+$font-family: 'Open Sans', sans-serif;
+$heading-font-family: 'Open Sans', sans-serif;
+
+
+$base-size: 1em;
+$sizes: ( 
+    heading: (xs: 2, md: 2.2, lg: 2.6, xl: 3), 
+    subheading: 1 1.2 1.4, 
+    default: 1, 
+    small: .8
+);
+
+$base-spacer: 1em;
+$spacers: ( 1: 6, 2: 1.5, 3: 1.25, 4: 1, 5: .75, 6: .5, );
+
+$base-line-height: 1.5;
+
+// check 'abstract/_config.scss' for more references

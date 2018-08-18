@@ -1,23 +1,19 @@
+@import 'config';
+
 @import '~normalize.css';
-@import 'core/__core';
-
-
+@import 'abstract/__abstract';
 @import 'base/__base';
-
-@import "vendors/__vendors";
-
+@import 'vendors/__vendors';
 @import 'pages/__pages';
 @import 'objects/__objects';
 @import 'components/__components';
-
 @import 'utils/__utils';
 
 * {
-	box-sizing: border-box;
-	outline: none;
+    outline: none;
+    box-sizing: border-box;
 }
 
 body {
-	background: $background-color;
+    background: color('background');
 }
-

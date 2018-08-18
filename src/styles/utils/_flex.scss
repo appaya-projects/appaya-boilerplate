@@ -1,17 +1,17 @@
 
 @each $_b, $b-width in $grid-breakpoints {
-	$b: if(map-get($grid-breakpoints, $_b) == 0, "", "-#{$_b}");
+    $b: if(map-get($grid-breakpoints, $_b) == 0, '', '-#{$_b}');
 
-	@media (min-width: $b-width) {
-		.u-align#{$b}-start 	{ align-items: flex-start; }
-		.u-align#{$b}-center 	{ align-items: center; }
-		.u-align#{$b}-end 		{ align-items: flex-end; }
-		
-		.u-justify#{$b}-start 	{ justify-content: flex-start; }
-		.u-justify#{$b}-end 	{ justify-content: flex-end; }
-		.u-justify#{$b}-center 	{ justify-content: center; }
-		.u-justify#{$b}-around 	{ justify-content: space-around; }
-		.u-justify#{$b}-between { justify-content: space-between;}
-	}
+    @media (min-width: $b-width) {
+        .u-align#{$b}-start 	{ align-items: flex-start; }
+        .u-align#{$b}-center 	{ align-items: center; }
+        .u-align#{$b}-end 		{ align-items: flex-end; }
+        
+        .u-justify#{$b}-start 	{ justify-content: flex-start; }
+        .u-justify#{$b}-end 	{ justify-content: flex-end; }
+        .u-justify#{$b}-center 	{ justify-content: center; }
+        .u-justify#{$b}-around 	{ justify-content: space-around; }
+        .u-justify#{$b}-between { justify-content: space-between;}
+    }
 
 }

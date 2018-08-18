@@ -1,0 +1,36 @@
+// Colors
+$colors: (
+    primary: #111,
+    secondary: #f48566,
+    error: #f00,
+    background: #fff,
+
+    heading: #111,
+    text: #111,
+    link: #111,
+    link-hover: #111
+) !default;
+
+// Typography
+$font-family: 'Open Sans', sans-serif !default;
+$heading-font-family: 'Open Sans', sans-serif !default;
+
+$base-size: 1em !default;
+$sizes: ( ) !default;
+
+
+$base-spacer: 1em  !default;
+$spacers: ( ) !default;
+
+$base-line-height: 1.5 !default;
+
+// Grid
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, ) !default;
+
+$container-max-widths: ( sm: 540px, md: 720px, lg: 960px, xl: 1140px, ) !default;
+
+$grid-gutter: 30px !default;
+$columns-count: 12 !default;
+
+// Browser context
+$browser-context: 16px !default;

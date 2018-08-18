@@ -1,18 +1,22 @@
 .o-btn {
-	display: inline-block;
-	font-size: 1rem;
-	line-height: $base-line-height;
+    display: inline-block;
+    
+    padding: 5px 35px;
+    border: 2px solid color('secondary');
+    border-radius: 25px;
 
-	background: transparent;
-	padding: 5px 35px;
-	border: 2px solid $secondary-color;
-	border-radius: 25px;
-	color: $secondary-color;
+    background: transparent;
+    color: color('secondary');
 
-	cursor: pointer;
-	text-decoration: none;
+    font-size: 1rem;
+    line-height: $base-line-height;
 
-	&:hover {
-		color: $secondary-color;
-	}
+    
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        background: color('secondary');
+        color: color('background');
+    }
 }
