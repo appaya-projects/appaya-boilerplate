@@ -14,9 +14,8 @@ $colors: (
 $font-family: 'Open Sans', sans-serif;
 $heading-font-family: 'Open Sans', sans-serif;
 
-
-$base-size: 1em;
-$sizes: ( 
+$base-font-size: 1em;
+$font-sizes: ( 
     heading: (xs: 2, md: 2.2, lg: 2.6, xl: 3), 
     subheading: 1 1.2 1.4, 
     default: 1, 

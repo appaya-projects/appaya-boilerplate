@@ -10,17 +10,17 @@
 }
 
 @mixin font-size($id) {
-    $size-var: map-get($sizes, $id);
+    $size-var: map-get($font-sizes, $id);
 
     @if type-of($size-var) == 'map' {
         @each $_b, $size in $size-var {
             $b-width: map-get($grid-breakpoints, $_b);
 
             @if $b-width == 0 {
-                font-size: $base-size * $size;
+                font-size: $base-font-size * $size;
             } @else {
                 @media (min-width: $b-width) {
-                    font-size: $base-size * $size;
+                    font-size: $base-font-size * $size;
                 }
             }
             
@@ -35,10 +35,10 @@
 
             @if length($size-var) >= $i {
                 @if $b-width == 0 {
-                    font-size: $base-size * nth($size-var, $i);
+                    font-size: $base-font-size * nth($size-var, $i);
                 } @else {
                     @media (min-width: $b-width) {
-                        font-size: $base-size * nth($size-var, $i);
+                        font-size: $base-font-size * nth($size-var, $i);
                     }
                 }
                 
@@ -46,7 +46,7 @@
     
         }
     } @else {
-        font-size: $base-size * $size-var;
+        font-size: $base-font-size * $size-var;
     }
     
 }
