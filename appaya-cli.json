@@ -3,6 +3,9 @@
     "type": "lp-boilerplate",
     "slug": "my-appaya-project",
     
-    "entry": "./src/page.js",
-    "output": "./build"
+    "config": {
+        "html-files": ["index"],
+        "entry": "./src/page.js",
+        "output": "./build"
+    }
 }
