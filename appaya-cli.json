@@ -4,7 +4,7 @@
     "slug": "my-appaya-project",
     
     "config": {
-        "html-files": ["index"],
+        "html-files": ["index.html"],
         "entry": "./src/page.js",
         "output": "./build"
     }
